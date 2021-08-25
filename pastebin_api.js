@@ -2,11 +2,12 @@
 async function postRequest(url='', data='') {
 	const response = await fetch(url, {
 		method: 'POST',
-		mode: 'no-cors',
+		mode: 'cors',
 		cache: 'no-cache',
 		credentials: 'same-origin',
 		headers: {
-			'Content-Type':'application/x-www-form-urlencoded'
+			'Content-Type':'application/x-www-form-urlencoded',
+			'Access-Control-Allow-Origin':'*'
 		},
 		redirect: 'follow',
 		referrerPolicy: 'no-referrer',
