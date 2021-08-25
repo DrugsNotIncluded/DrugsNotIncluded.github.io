@@ -1,19 +1,33 @@
 
-async function postRequest(url='', data={}) {
+async function postRequest(url='', data='') {
 	const response = await fetch(url, {
 		method: 'POST',
 		mode: 'cors',
 		cache: 'no-cache',
 		credentials: 'same-origin',
 		headers: {
-			'Content-Type':'application/json'
+			'Content-Type':'application/x-www-form-urlencoded'
 		},
 		redirect: 'follow',
 		referrerPolicy: 'no-referrer',
-		body: JSON.stringify(data)
+		body: data
 	});
 	return await response.json();
 }
 
-postRequest("https://httpbin.org/post",{"test":"huest"})
+let details = {
+	'api_dev_key':'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
+	'api_user_name':'CoffeeDoll',
+	'api_user_password':'yhn125125arm'
+};
+let body = [];
+
+for (let property in details) {
+	let encodedKey = encodeURIComponent(property);
+	let encodedValue = encodeURIComponent(details[property]);
+	body.push(encodedKey+"="+encodedValue);
+}
+body = body.join("&")
+
+postRequest("https://httpbin.org/post",body)
 .then((data) => {console.log(data);});
