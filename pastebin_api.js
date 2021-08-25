@@ -1,23 +1,19 @@
-//const fetch = require("node-fetch");
 
-
-async function postRequest(request, server) {
-	const response = await fetch(server, {
-		method:'POST',
-		mode:'no-cors',
-		cache:'no-cache',
-		credentials:'same-origin',
+async function postRequest(url='', data={}) {
+	const response = await fetch(url, {
+		method: 'POST',
+		mode: 'cors',
+		cache: 'no-cache',
+		credentials: 'same-origin',
 		headers: {
-			'Content-Type':'application/x-www-form-urlencoded'
+			'Content-Type':'application/json'
 		},
-		redirect:'follow',
-		referrerPolicy:'no-referrer',
-		body: request
+		redirect: 'follow',
+		referrerPolicy: 'no-referrer',
+		body: JSON.stringify(data)
 	});
-	return await response
+	return await response.json();
 }
 
-let api_dev_key = 'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5';
-
-postRequest("test","https://httpbin.org/post")
+postRequest("https://httpbin.org/post",{"test":"huest"})
 .then((data) => {console.log(data);});
