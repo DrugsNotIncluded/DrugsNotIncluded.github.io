@@ -13,7 +13,7 @@ async function postRequest(url='', data='') {
 		referrerPolicy: 'no-referrer',
 		body: data
 	});
-	return await response.json();
+	return await response;
 }
 
 let details = {
