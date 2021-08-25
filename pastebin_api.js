@@ -14,7 +14,7 @@ async function postRequest(request, server) {
 		referrerPolicy:'no-referrer',
 		body: request
 	});
-	return await response.json()
+	return await response
 }
 
 let api_dev_key = 'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5';
