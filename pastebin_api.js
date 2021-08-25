@@ -20,5 +20,4 @@ async function postRequest(request, server) {
 let api_dev_key = 'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5';
 
 postRequest("test","https://httpbin.org/post")
-.then((response) => {return response.json();})
 .then((data) => {console.log(data);});
