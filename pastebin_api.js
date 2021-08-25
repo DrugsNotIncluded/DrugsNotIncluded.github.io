@@ -29,5 +29,5 @@ for (let property in details) {
 }
 body = body.join("&")
 
-postRequest("https://httpbin.org/post",body)
+postRequest("https://pastebin.com/api/api_login.php",body)
 .then((data) => {console.log(data);});
