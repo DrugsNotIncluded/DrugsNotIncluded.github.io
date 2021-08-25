@@ -30,5 +30,5 @@ for (let property in details) {
 }
 body = body.join("&")
 
-postRequest("https://pastebin.com/api/api_login.php",body)
+postRequest("https://fierce-river-56744.herokuapp.com/?https://pastebin.com/api/api_login.php",body)
 .then((data) => {console.log(data);});
