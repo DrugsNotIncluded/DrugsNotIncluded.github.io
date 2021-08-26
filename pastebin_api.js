@@ -39,9 +39,7 @@ let details = {
 	'api_user_password':'yhn125125arm'
 };
 
-let data = keyValueURLEncode(details);
-let cors_proxy = 'https://fierce-river-56744.herokuapp.com/';
-let url = 'https://pastebin.com/api/api_login.php';
+
 let params = {method:'POST',
 	      mode:'cors',
 	      cache:'no-cache',
@@ -53,8 +51,8 @@ let params = {method:'POST',
 	      redirect:'follow',
 	      referrerPolicy:'no-referrer'};
 
-postRequest(url = url,
-	    data = data,
-	    cors_proxy = cors_proxy,
-	    params = params)
+postRequest('https://pastebin.com/api/api_login.php',
+	    keyValueURLEncode(details),
+	    'https://fierce-river-56744.herokuapp.com/',
+	    params)
     .then((data) => {console.log(data);});
