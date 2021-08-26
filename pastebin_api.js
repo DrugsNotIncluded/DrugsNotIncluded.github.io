@@ -41,10 +41,9 @@ class Pastebin {
     }	
 }
 
-
-let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
-			 'Coffeedoll',
-			 'yhn125125arm',
-			 'https://fierce-river-56744.herokuapp.com');
-console.log("meow");
-console.log(paste.api_user_key);
+(async () => {
+    let paste = await new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
+				   'Coffeedoll',
+				   'yhn125125arm',
+				   'https://fierce-river-56744.herokuapp.com');
+})();
