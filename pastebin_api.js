@@ -43,4 +43,4 @@ let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'Coffeedoll',
 			 'yhn125125arm');
 
-paste.api_user_key.then((data) => {console.log(data);});
+paste.api_user_key().then((data) => {console.log(data);});
