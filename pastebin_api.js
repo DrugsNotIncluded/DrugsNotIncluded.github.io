@@ -14,7 +14,7 @@ async function postRequest(url='',
 	else {return url;}
     };
 
-    console.log(url);
+    console.log(urlCors);
     console.log(data);
     console.log(params);
     //fetch
