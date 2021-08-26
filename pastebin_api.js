@@ -26,9 +26,9 @@ class Pastebin {
 	this.api_user_name = api_user_name;
 	this.api_user_password = api_user_password;
 	this.cors_proxy = cors_proxy;
-    
+    }
 
-	this.api_user_key = (async () => {
+    async api_user_key() {
 	    details = {'api_dev_key':this.api_dev_key,
 		       'api_user_name':this.api_user_name,
 		       'api_user_password':this.api_user_password};
@@ -37,13 +37,12 @@ class Pastebin {
 				     this.cors_proxy,
 				     this.params)
 		.then((data) => {return data;});
-	});
-    }	
-}
+    };
+}	
 
-(async () => {
-    let paste = await new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
-				   'Coffeedoll',
-				   'yhn125125arm',
-				   'https://fierce-river-56744.herokuapp.com');
-})();
+
+let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
+			 'Coffeedoll',
+			 'yhn125125arm',
+			 'https://fierce-river-56744.herokuapp.com');
+
