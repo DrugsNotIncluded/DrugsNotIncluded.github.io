@@ -13,7 +13,27 @@ async function postRequest(url='', data='') {
 		referrerPolicy: 'no-referrer',
 		body: data
 	});
-	return await response;
+	const reader = response.body.getReader();
+	return new ReadableStream({
+		start(controller) {
+			return pump();
+			function pump() {
+				return reader.read().then(({done, value}) => {
+					if (done) {
+						controller.close();
+						return;
+					}
+					controller.enqueue(value);
+					return pump();
+				})
+			}
+		}
+	})
+	.then(stream => new Response(stream))
+	.then(response => response.blob())
+	.then(blob => URL.createObjectURL(blob))
+	.then(url => console.log(url))
+	.catch(err => console.error(err));
 }
 
 let details = {
