@@ -5,13 +5,7 @@
 async function postRequest(url='',
 			   data = '',
 			   cors_proxy='',
-			   params = {method:'',
-				     mode:'',
-				     cache:'',
-				     credentials:'',
-				     headers:{},
-				     redirect:'',
-				     referrerPolicy:''}) {
+			   params = {}) {
     params.body = data;
     //cors-proxy
     if (cors_proxy == true && cors_proxy[-1] == '/') {url = cors_proxy + "&" + url;}
