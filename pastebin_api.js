@@ -28,7 +28,7 @@ class Pastebin {
 	this.cors_proxy = cors_proxy;
     }
 
-    api_user_key() {return (async () => {
+    async api_user_key() {
 	details = {'api_dev_key':this.api_dev_key,
 		   'api_user_name':this.api_user_name,
 		   'api_user_password':this.api_user_password};
@@ -37,13 +37,11 @@ class Pastebin {
 				 this.cors_proxy,
 				 this.params)
 	    .then((data) => {console.log(data);});
-    });}
-}
+    };}
+
 
 let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'Coffeedoll',
 			 'yhn125125arm');
 
-(async () => {
-    let api_user_key = await paste.api_user_key();
-})();
+paste.api_user_key();
