@@ -28,7 +28,7 @@ class Pastebin {
 	this.cors_proxy = cors_proxy;
     }
 
-    get api_user_key() {return (async () => {
+    api_user_key() {return (async () => {
 	details = {'api_dev_key':this.api_dev_key,
 		   'api_user_name':this.api_user_name,
 		   'api_user_password':this.api_user_password};
