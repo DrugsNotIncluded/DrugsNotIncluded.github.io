@@ -46,6 +46,5 @@ let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'https://fierce-river-56744.herokuapp.com');
 
 (async () => {
-    let api_user_key = await paste.api_user_key();
-    console.log(api_user_key);
+    console.log(await paste.api_user_key());
 });
