@@ -35,8 +35,7 @@ class Pastebin {
 	return await postRequest('https://pastebin.com/api/api_login.php',
 				 keyValueURLEncode(details),
 				 this.cors_proxy,
-				 this.params)
-	    .then((data) => {return data;});
+				 this.params);
     });}
 }
 
@@ -44,4 +43,4 @@ let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'Coffeedoll',
 			 'yhn125125arm');
 
-console.log(paste.api_user_key);
+paste.api_user_key.then((data) => {console.log(data);});
