@@ -8,7 +8,7 @@ async function postRequest(url='',
 			   params = {}) {
     params.body = data;
     //cors-proxy
-    let url = () => {
+    let urlCors = () => {
 	if (cors_proxy !== "" && cors_proxy[-1] == '/') {return cors_proxy + "&" + url;}
 	if (cors_proxy !== "" && cors_proxy[-1] != '/') {return cors_proxy + "/&" + url;}
 	else {return url;}
@@ -18,7 +18,7 @@ async function postRequest(url='',
     console.log(data);
     console.log(params);
     //fetch
-    const response = await fetch(url, params);
+    const response = await fetch(urlCors, params);
     return await response.text();
     
 }
