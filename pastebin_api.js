@@ -36,7 +36,7 @@ class Pastebin {
 				 keyValueURLEncode(details),
 				 this.cors_proxy,
 				 this.params)
-	    .then((data) => {console.log(data);});
+	    .then((data) => {return(data);});
     };}
 
 
@@ -45,4 +45,7 @@ let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'yhn125125arm',
 			 'https://fierce-river-56744.herokuapp.com');
 
-paste.api_user_key();
+(async () => {
+    let api_user_key = await paste.api_user_key();
+    console.log(api_user_key);
+});
