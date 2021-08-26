@@ -1,35 +1,6 @@
-//import {postRequest,keyValueURLEncode} from './libs/methods.mjs';
-
 'use strict';
 
-async function postRequest(url='',
-			   data = '',
-			   cors_proxy='',
-			   params = {}) {
-    params.body = data;
-    //cors-proxy
-    let urlCors = cors_proxy + "/" + url;
-
-    console.log(urlCors);
-    console.log(data);
-    console.log(params);
-    //fetch
-    const response = await fetch(urlCors, params);
-    return await response.text();
-}
-
-function keyValueURLEncode(details) {
-    let body = [];
-    for (let property in details) {
-	let encodedKey = encodeURIComponent(property);
-	let encodedValue = encodeURIComponent(details[property]);
-	body.push(encodedKey+"="+encodedValue);
-    }
-    body = body.join("&");
-    return body;
-}
-
-//test
+import {postRequest,keyValueURLEncode} from './libs/methods.mjs';
 
 let details = {
 	'api_dev_key':'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',

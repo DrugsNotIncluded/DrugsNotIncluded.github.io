@@ -3,22 +3,14 @@
 async function postRequest(url='',
 			   data = '',
 			   cors_proxy='',
-			   params = {method:'',
-				     mode:'',
-				     cache:'',
-				     credentials:'',
-				     headers:{},
-				     redirect:'',
-				     referrerPolicy:''}) {
+			   params = {}) {
     params.body = data;
     //cors-proxy
-    if (cors_proxy == true && cors_proxy[-1] == '/') {url = cors_proxy + "&" + url;}
-    if (cors_proxy == true && cors_proxy[-1] != '/') {url = cors_proxy + "/&" + url;}
+    let urlCors = cors_proxy + "/" + url;
 
     //fetch
-    const response = await fetch(url, params);
+    const response = await fetch(urlCors, params);
     return await response.text();
-    
 }
 
 function keyValueURLEncode(details) {
@@ -31,5 +23,4 @@ function keyValueURLEncode(details) {
     body = body.join("&");
     return body;
 }
-
-export {postRequest, keyValueURLEncode}
+export {postRequest, keyValueURLEncode};
