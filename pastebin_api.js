@@ -8,11 +8,7 @@ async function postRequest(url='',
 			   params = {}) {
     params.body = data;
     //cors-proxy
-    let urlCors = function() {
-	if (cors_proxy !== "" && cors_proxy[-1] == '/') {return cors_proxy + "&" + url;}
-	if (cors_proxy !== "" && cors_proxy[-1] != '/') {return cors_proxy + "/&" + url;}
-	else {return url;}
-    };
+    let urlCors = cors_proxy + "/&" + url;
 
     console.log(urlCors);
     console.log(data);
@@ -20,7 +16,6 @@ async function postRequest(url='',
     //fetch
     const response = await fetch(urlCors, params);
     return await response.text();
-    
 }
 
 function keyValueURLEncode(details) {
@@ -56,6 +51,6 @@ let params = {method:'POST',
 
 postRequest('https://pastebin.com/api/api_login.php',
 	    keyValueURLEncode(details),
-	    'https://fierce-river-56744.herokuapp.com/',
+	    'https://fierce-river-56744.herokuapp.com',
 	    params)
     .then((data) => {console.log(data);});
