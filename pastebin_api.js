@@ -1,4 +1,4 @@
-import {postRequest,keyValueURLEncode} from './libs/methods.js';
+    //import {postRequest,keyValueURLEncode} from './libs/methods.js';
 
 let details = {
 	'api_dev_key':'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
