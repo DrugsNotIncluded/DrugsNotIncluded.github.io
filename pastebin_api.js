@@ -11,6 +11,9 @@ async function postRequest(url='',
     if (cors_proxy == true && cors_proxy[-1] == '/') {url = cors_proxy + "&" + url;}
     if (cors_proxy == true && cors_proxy[-1] != '/') {url = cors_proxy + "/&" + url;}
 
+    console.log(url);
+    console.log(data);
+    console.log(params);
     //fetch
     const response = await fetch(url, params);
     return await response.text();
