@@ -8,7 +8,7 @@ async function postRequest(url='',
 			   params = {}) {
     params.body = data;
     //cors-proxy
-    let urlCors = () => {
+    let urlCors = function() {
 	if (cors_proxy !== "" && cors_proxy[-1] == '/') {return cors_proxy + "&" + url;}
 	if (cors_proxy !== "" && cors_proxy[-1] != '/') {return cors_proxy + "/&" + url;}
 	else {return url;}
