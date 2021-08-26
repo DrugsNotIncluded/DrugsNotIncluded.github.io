@@ -44,6 +44,6 @@ let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'Coffeedoll',
 			 'yhn125125arm');
 
-async () => {
+(async () => {
     let api_user_key = await paste.api_user_key();
-}
+})();
