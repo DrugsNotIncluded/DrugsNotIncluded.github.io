@@ -43,6 +43,6 @@ class Pastebin {
 let paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'Coffeedoll',
 			 'yhn125125arm',
-			 'https://https://fierce-river-56744.herokuapp.com');
+			 'https://fierce-river-56744.herokuapp.com');
 
 paste.api_user_key();
