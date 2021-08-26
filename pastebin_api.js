@@ -8,7 +8,7 @@ async function postRequest(url='',
 			   params = {}) {
     params.body = data;
     //cors-proxy
-    let urlCors = cors_proxy + "/&" + url;
+    let urlCors = cors_proxy + "/" + url;
 
     console.log(urlCors);
     console.log(data);
