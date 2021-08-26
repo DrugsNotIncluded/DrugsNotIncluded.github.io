@@ -46,3 +46,6 @@ var paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'yhn125125arm',
 			 'https://fierce-river-56744.herokuapp.com');
 
+(async () => {
+    await paste.api_user_key().then((data) => {console.log(data);}); 
+});
