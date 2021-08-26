@@ -8,8 +8,8 @@ async function postRequest(url='',
 			   params = {}) {
     params.body = data;
     //cors-proxy
-    if (cors_proxy == true && cors_proxy[-1] == '/') {url = cors_proxy + "&" + url;}
-    if (cors_proxy == true && cors_proxy[-1] != '/') {url = cors_proxy + "/&" + url;}
+    if (cors_proxy == true && cors_proxy[-1] == '/') {let url = cors_proxy + "&" + url;}
+    if (cors_proxy == true && cors_proxy[-1] != '/') {let url = cors_proxy + "/&" + url;}
 
     console.log(url);
     console.log(data);
