@@ -1,6 +1,6 @@
 'use strict';
 
-import {postRequest,keyValueURLEncode} from './libs/methods.mjs';
+import {postRequest,keyValueURLEncode} from './libs/methods.js';
 
 let details = {
 	'api_dev_key':'NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
