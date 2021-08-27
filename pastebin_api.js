@@ -36,7 +36,7 @@ class Pastebin {
 				 keyValueURLEncode(details),
 				 this.cors_proxy,
 				 this.params)
-	    .then((data) => {callback(data);});
+	    .then((data) => {console.log(data);});
 	//returns promise
     };
 }	
