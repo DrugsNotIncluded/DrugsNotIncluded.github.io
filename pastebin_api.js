@@ -28,14 +28,15 @@ class Pastebin {
 	this.cors_proxy = cors_proxy;
     }
 
-    async api_user_key() {
-	    details = {'api_dev_key':this.api_dev_key,
-		       'api_user_name':this.api_user_name,
-		       'api_user_password':this.api_user_password};
-	    return await postRequest('https://pastebin.com/api/api_login.php',
-				     keyValueURLEncode(details),
-				     this.cors_proxy,
-				     this.params);
+    async api_user_key(callback) {
+	details = {'api_dev_key':this.api_dev_key,
+		   'api_user_name':this.api_user_name,
+		   'api_user_password':this.api_user_password};
+	return await postRequest('https://pastebin.com/api/api_login.php',
+				 keyValueURLEncode(details),
+				 this.cors_proxy,
+				 this.params)
+	    .then((data) => {callback();});
 	//returns promise
     };
 }	
@@ -46,8 +47,6 @@ var paste = new Pastebin('NLlhwOjBdRWLLG_4e42chRcUXtNruVL5',
 			 'yhn125125arm',
 			 'https://fierce-river-56744.herokuapp.com');
 
-(async () => {
-    
-    await paste.api_user_key().then((data) => {console.log(data);
-					       console.log(this);}); 
-});
+function example_callback(data) {
+    console.log(data);
+}
