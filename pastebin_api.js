@@ -35,9 +35,8 @@ class Pastebin {
 	    return await postRequest('https://pastebin.com/api/api_login.php',
 				     keyValueURLEncode(details),
 				     this.cors_proxy,
-				     this.params)
-	    .then((data) => {return data;});
-	return await details;
+				     this.params);
+	//returns promise
     };
 }	
 
