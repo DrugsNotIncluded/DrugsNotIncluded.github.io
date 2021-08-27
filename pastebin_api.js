@@ -36,7 +36,7 @@ class Pastebin {
 				 keyValueURLEncode(details),
 				 this.cors_proxy,
 				 this.params)
-	    .then((data) => {example_callback(data);});
+	    .then((data) => {return(data);});
 	//returns promise
     };
 }	
@@ -52,5 +52,5 @@ function example_callback(data) {
 }
 
 (async () => {
-    await paste.api_user_key(example_callback);
+    await paste.api_user_key().then((data) => {example_callback(data);});
 });
